@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./images/cardiogram.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="spinner.css" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>BMI-Calculator</title>
+  </head>
+  <body>
+    <div id="loading" class="flexLoading">
+      <div class="imageLoading"></div>
+      <div class="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <h1>The basis of success in life is the good health ...</h1>
+    </div>
+    <div id="body-container" class="hidden">
+      <header>
+        <h1 class="animate__animated animate__backInDown">IMC - Calculator</h1>
+      </header>
+      <div class="container">
+        <p class="instructions-title animate__animated animate__fadeInLeft">
+          <strong>Instructions</strong>
+        </p>
+        <ul class="animate__animated animate__fadeInLeft">
+          <li>You should enter your weight(kg) and your height(cm).</li>
+          <li>You will can your result in the bottom section of this page.</li>
+        </ul>
+
+        <div class="flex">
+          <form class="animate__animated animate__fadeInLeft">
+            <div class="form-container">
+              <div>
+                <div>
+                  <input id="weight" type="number" />kg
+                  <p id="weightLabel" class="placeholder">Weight</p>
+                </div>
+                <div class="message">
+                  <span id="message1"></span>
+                </div>
+              </div>
+              <div>
+                <div>
+                  <input id="height" type="number" />cm
+                  <p id="heightLabel" class="placeholder">Height</p>
+                </div>
+                <div class="message">
+                  <span id="message2"></span>
+                </div>
+              </div>
+            </div>
+            <button id="button">Calculate</button>
+          </form>
+          <div class="result animate__animated animate__fadeInRight">
+            <h1>RESULT</h1>
+            <div class="values">
+              <p id="result">0</p>
+              <span>kg/m2</span>
+            </div>
+            <div class="messageText">
+              <h4>Body composition</h4>
+              <p id="resultText">-------</p>
+            </div>
+          </div>
+        </div>
+        <div class="container-table animate__animated animate__backInUp">
+          <table class="table">
+            <tr>
+              <th>Body Composition</th>
+              <th>Body Mass Index (BMI)</th>
+              <th>Recomendations</th>
+            </tr>
+            <tr id="bajoPeso">
+              <td>Underweight</td>
+              <td>less de 18.5</td>
+              <td><p id="recomendation1">Click here</p></td>
+            </tr>
+            <tr id="normal">
+              <td>Normal</td>
+              <td>18.5 - 24.9</td>
+              <td><p id="recomendation2">Click here</p></td>
+            </tr>
+            <tr id="sobrePeso">
+              <td>Overweight</td>
+              <td>25.0 - 29.9</td>
+              <td><p id="recomendation3">Click here</p></td>
+            </tr>
+            <tr id="obesidad">
+              <td>Obesity</td>
+              <td>more than 30.0</td>
+              <td><p id="recomendation4">Click here</p></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div id="container-modalId" class="container-modal">
+      <div class="modal">
+        <div class="img">
+          <img id="img-close" src="./images/icons8-delete-48.png" alt="" />
+        </div>
+        <div class="content">
+          <h1>Recomendations</h1>
+          <div class="content-wrapper">
+            <ul>
+              <li id="r1"></li>
+              <li id="r2"></li>
+              <li id="r3"></li>
+            </ul>
+            <img src="./images/cardiogram.png" alt="" />
+          </div>
+          <a
+            href="https://www.goodhope.org.pe/blog/recomendaciones-para-una-persona-con-sobrepeso-y-obesidad-en-tiempos-de-pandemia/"
+            target="_blank"
+            >More information</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./controllerLoading.js"></script>
+  <script src="./script.js"></script>
+  <script src="./controllerLabel.js"></script>
+  <script src="./controllerModal.js"></script>
+</html>
